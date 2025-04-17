@@ -18,10 +18,10 @@ const MonthButton = () => {
   } = useCalendarContext();
 
   const currentMonthText = dayjs(currentDate)
-    .calendar(calendar)
     .locale(
       calendar === 'jalali' && !isValidJalaliLocale(locale) ? 'en' : locale
     )
+    .calendar(calendar)
     .format(monthCaptionFormat === 'full' ? 'MMMM' : 'MMM');
 
   return (
